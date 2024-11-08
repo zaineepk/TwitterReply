@@ -1,0 +1,269 @@
+.source-code-pro-thin {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 200;
+    font-style: normal;
+  }
+  
+  .source-code-pro-extralight {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .source-code-pro-light {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .source-code-pro-regular {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .source-code-pro-medium {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .source-code-pro-semibold {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .source-code-pro-bold {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  .source-code-pro-black {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .chakra-petch-light {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .chakra-petch-regular {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .chakra-petch-medium {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .chakra-petch-semibold {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .chakra-petch-bold {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .chakra-petch-light-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .chakra-petch-regular-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .chakra-petch-medium-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .chakra-petch-semibold-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .chakra-petch-bold-italic {
+    font-family: "Chakra Petch", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }  
+
+/* Appliquer la police personnalisée à l'ensemble du document */
+body {
+    font-family: 'Source Code Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    padding: 20px;
+}
+
+/* Le reste de votre CSS */
+:root {
+    --bs-primary: #EF2B7C;
+    --bs-dark: #121117;
+    --bs-secondary: #120c18;
+}
+
+.text-white-custom, .text-white-custom *:not(.text-primary):not(input[type="text"]):not(.non-modifiable) {
+    color: white !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+/* CSS for Bootstrap buttons with a modern, smooth hover effect */
+.btn {
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.btn:hover {
+    transform: scale(1.04) !important;
+}
+
+.btn:active {
+    transform: scale(0.85) !important;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.bg-primary {
+    background-color: var(--bs-primary) !important;
+}
+
+.bg-dark {
+    background-color: var(--bs-dark) !important;
+}
+
+.bg-secondary {
+    background-color: var(--bs-secondary) !important;
+}
+
+.card {
+    --bs-card-bg: #1c1227 !important;
+}
+
+.card-title {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.border {
+    border: 1px solid #1c1326 !important;
+}
+
+.navbar-brand {
+  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 600;
+}
+
+.nav-link.active {
+    background-color: var(--bs-secondary) !important;
+}
+
+/* Add other overrides as needed */
+
+.mb-4 {
+    border: 1px solid #1c1326;
+    border-radius: .25rem;
+    padding: 20px;
+}
+
+.mb-3 {
+    border: 1px solid #1c1326;
+    border-radius: .25rem;
+    padding: 10px;
+}
+
+.actions-section .btn.disabled {
+    background-color: var(--bs-tertiary-bg) !important;
+    opacity: 0.5 !important;
+    pointer-events: none; /* Désactive les interactions */
+}
+
+.actions-section .btn.disabled:hover {
+    background-color: var(--bs-tertiary-bg) !important;
+}
+
+/* Styles for the scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bs-secondary) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--bs-primary); /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+    border: 3px solid var(--bs-secondary) !important;
+}
+
+/* Assurez-vous que les champs de texte utilisent la couleur de texte noir */
+.input-group input[type="text"],
+.input-group input[type="text"]:focus,
+.input-group input[type="text"]:active {
+    color: var(--bs-dark) !important;
+    background-color: #fff !important; /* Garder le fond blanc */
+}
+
+.form-control {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+/* Assurez-vous que les boutons ont du texte blanc */
+.input-group .btn {
+    font-family: 'Chakra Petch', sans-serif !important;
+    color: #fff !important;
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+.flex-column {
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-size: large;
+}
+
+/* Assurez-vous que les labels utilisent la couleur de texte noir */
+.form-group label {
+    color: var(--bs-dark) !important;
+}
+
+/* Assurez-vous que les placeholders ont la couleur de texte noire */
+.input-group input[type="text"]::placeholder {
+    color: var(--bs-dark) !important;
+}
+
+/* Styles pour rendre les div non modifiables ressemblant à des inputs */
+.non-modifiable {
+    background-color: #f8f9fa !important; /* Couleur de fond pour les champs non modifiables */
+    color: var(--bs-dark) !important; /* Couleur de texte pour les champs non modifiables */
+    border: 1px solid #ced4da !important; /* Bordure pour les champs non modifiables */
+    padding: .375rem .75rem; /* Ajuster le padding pour correspondre aux autres champs */
+    border-radius: .25rem; /* Garder le même radius que les autres champs */
+    box-sizing: border-box; /* Pour s'assurer que le padding est inclus dans la taille totale */
+    width: 100%; /* Pour s'assurer que le div prend toute la largeur */
+    user-select: none; /* Empêcher la sélection du texte */
+}

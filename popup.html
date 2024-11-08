@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto GM for X.com</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 400px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1 0 auto;
+      padding-bottom: 50px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: var(--bs-primary) !important;
+      text-align: center;
+      padding: 2px 0;
+    }
+
+    .nav-pills .nav-link {
+      position: relative;
+      transition: color 0.3s ease, background-color 0.3s ease;
+      font-family: 'Chakra Petch', sans-serif;
+      font-weight: 600;
+    }
+
+    .nav-pills .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: translateX(-50%) scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    .nav-pills .nav-link.active::after {
+      transform: translateX(-50%) scale(1);
+    }
+
+    .tab-content .tab-pane {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .tab-content .tab-pane.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .btn {
+      font-family: 'Source Code Pro', sans-serif !important;
+      font-weight: 500;
+    } 
+
+    .centered {
+      text-align: center;
+    } 
+
+  </style>
+</head>
+<body class="text-white-custom bg-dark">
+  <div class="content">
+    <nav style="padding: 10px 20px !important;" class="navbar navbar-light d-flex justify-content-between">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="ressources/logo.svg" alt="Logo" class="me-2" style="width: 30px; height: 30px;">
+          Tools CryptoDegen
+      </a>
+      <a id="settings-button" href="#">
+          <i class="fas fa-cog"></i>
+      </a>
+    </nav>
+
+    <div class="container mt-3">
+      <div class="mb-3 bg-secondary actions-section">
+        <h2 class="h4 text-primary">Actions</h2>
+        <div class="form-group">
+          <div class="btn-group-vertical w-100" role="group" aria-label="Auto Actions">
+            <div class="btn-group w-100 flex-wrap" role="group">
+              <button type="button" id="gm-button" class="btn btn-primary m-1 flex-grow-1 rounded-pill"><i class="fas fa-sun me-2"></i>GM/GN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3 bg-secondary">
+        <h2 class="h4 text-primary">Mode</h2>
+        <div class="form-group">
+            <ul class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm my-3" id="pillNav2" role="tablist" style="--bs-nav-link-color: var(--bs-white); --bs-nav-pills-link-active-color: var(--bs-primary); --bs-nav-pills-link-active-bg: var(--bs-white);">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-5" id="boost-tab" data-bs-toggle="tab" data-bs-target="#boost-tab-pane" type="button" role="tab" aria-selected="false" data-mode="boost">
+                        <i class="fas fa-bolt"></i> Boost
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-5" id="performance-tab" data-bs-toggle="tab" data-bs-target="#performance-tab-pane" type="button" role="tab" aria-selected="false" data-mode="performance">
+                        <i class="fas fa-tachometer-alt"></i> Performance
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link rounded-5" id="security-tab" data-bs-toggle="tab" data-bs-target="#security-tab-pane" type="button" role="tab" aria-selected="false" data-mode="security">
+                        <i class="fas fa-shield-alt"></i> Security
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane fade" id="boost-tab-pane" role="tabpanel" aria-labelledby="boost-tab">
+                <small class="form-text text-muted">
+                    <i class="fas fa-bolt"></i> <b>Boost mode:</b> Executes actions at ultra-fast speeds, but may flag your account as a bot.
+                </small>
+            </div>
+            <div class="tab-pane fade" id="performance-tab-pane" role="tabpanel" aria-labelledby="performance-tab">
+                <small class="form-text text-muted">
+                    <i class="fas fa-tachometer-alt"></i> <b>Performance mode:</b> Performs tasks quickly, though frequent use could lead to detection.
+                </small>
+            </div>
+            <div class="tab-pane fade" id="security-tab-pane" role="tabpanel" aria-labelledby="security-tab">
+                <small class="form-text text-muted">
+                    <i class="fas fa-shield-alt"></i> <b>Security mode:</b> Allows nearly unlimited tasks safely, mimicking human behavior.
+                </small>
+            </div>
+        </div>
+    </div>    
+
+    <div class="mb-3 bg-secondary centered">
+      <a href="https://youtu.be/G7eplR6DlY8" target="_blank" class="text-decoration-none text-primary">Learn how to use the extension</a>
+  </div>
+
+    </div>
+  </div>
+  <div class="footer">
+    <small>version: beta 1.0</small> 
+  </div>
+
+  <script src="ressources/jquery-3.7.1.min.js"></script>
+  <script src="ressources/popper.min.js"></script>
+  <script src="ressources/bootstrap.min.js"></script>
+  <script src="popup.js"></script>
+  <script src="settings.js"></script>
+
+</body>
+</html>
